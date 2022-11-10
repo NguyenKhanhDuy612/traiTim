@@ -67,3 +67,6 @@ body {
   font-weight: bold;
   color: wheat;
 }
+.name h1 {
+  font-family: "Times New Roman", Times, serif;
+}

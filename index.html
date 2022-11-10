@@ -23,11 +23,21 @@
     </style>
   </head>
   <body>
+    <iframe
+      src="eee.mp3"
+      allow="autoplay"
+      style="display: none"
+      id="iframeAudio"
+    >
+    </iframe>
+    <audio id="playAudio" controls autoplay style="display: none">
+      <source src="eee.mp3" />
+    </audio>
     <div class="box">
       <canvas id="pinkboard"></canvas>
     </div>
     <div class="name">
-      <h1>Út Hạnh</h1>
+      <h4>Yêu bản thân</h4>
     </div>
     <script>
       var settings = {
@@ -300,6 +310,16 @@
           render();
         }, 10);
       })(document.getElementById("pinkboard"));
+    </script>
+    <script>
+      var isChrome =
+        /Chrome/.test(navigator.userAgent) &&
+        /Google Inc/.test(navigator.vendor);
+      if (!isChrome) {
+        $("#iframeAudio").remove();
+      } else {
+        $("#playAudio").remove(); // just to make sure that it will not have 2x audio in the background
+      }
     </script>
   </body>
 </html>
