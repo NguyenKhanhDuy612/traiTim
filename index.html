@@ -23,6 +23,7 @@
     </style>
   </head>
   <body>
+    <!-- music -->
     <iframe
       src="eee.mp3"
       allow="autoplay"
@@ -38,7 +39,11 @@
     </div>
     <div class="name">
       <h4>Yêu bản thân</h4>
+      <i>Nguyễn Khánh Duy</i>
     </div>
+    <!-- mouse -->
+    <div class="cursor">Khánh Duy</div>
+    <div class="cursor2"></div>
     <script>
       var settings = {
         particles: {
@@ -311,6 +316,7 @@
         }, 10);
       })(document.getElementById("pinkboard"));
     </script>
+    <!-- music -->
     <script>
       var isChrome =
         /Chrome/.test(navigator.userAgent) &&
@@ -320,6 +326,15 @@
       } else {
         $("#playAudio").remove(); // just to make sure that it will not have 2x audio in the background
       }
+    </script>
+    <!-- mouse -->
+    <script>
+      var cursor = document.querySelector(".cursor");
+      var cursor2 = document.querySelector(".cursor2");
+      document.addEventListener("mousemove", function (e) {
+        cursor.style.cssText = cursor2.style.cssText =
+          "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+      });
     </script>
   </body>
 </html>
